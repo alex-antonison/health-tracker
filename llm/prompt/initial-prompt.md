@@ -1,9 +1,9 @@
-I want to stand up a project that can read in a google sheet that looks like 
+I want to stand up a project that can read in a google sheet that looks like
 
 Date	Symptom	Mobility	Notes
-			
+
 10/9/2026	Symtpom1 | Symptom2 | Symptom3	No Assist	A bit anxious
-10/10/2026	Symtpom1 | Symptom2 | Symptom3 | Symptom4	No Assist	Ate late on the night of the 9th. 
+10/10/2026	Symtpom1 | Symptom2 | Symptom3 | Symptom4	No Assist	Ate late on the night of the 9th.
 
 And can split that into two tables:
 1. Expand the symptoms by splitting on |

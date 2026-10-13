@@ -1,10 +1,8 @@
-import sys
-
-
 def main():
     """Main entry point for the health tracker script."""
-    from .process_symptom_data import process_health_data
     import argparse
+
+    from .process_symptom_data import process_health_data
 
     parser = argparse.ArgumentParser(
         description="Process health data from Google Sheets"

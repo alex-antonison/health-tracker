@@ -49,7 +49,7 @@ clean:
 status:
     echo "Checking project status..."
     just check-env
-    
+
 # Check environment variables
 check-env:
     echo "Checking environment variables..."

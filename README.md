@@ -128,3 +128,25 @@ just
 This will show all available commands.
 
 See [AGENTS.md](AGENTS.md) and [docs/development.md](docs/development.md) for guidelines about using uv and other development practices when working with AI agents.
+
+## Code Quality
+
+This project uses Ruff for Python code formatting and linting, and prek hooks to ensure code quality.
+
+### Prek Hooks
+
+Prek hooks are configured to run Ruff formatting and linting on every commit:
+
+- `ruff format` - Formats Python code according to PEP 8 standards
+- `ruff check` - Checks for linting issues and automatically fixes them when possible
+
+To install the prek hooks:
+```bash
+uv tool install prek
+prek init
+```
+
+Once installed, the hooks will run automatically on every commit. If you want to run them manually on all files:
+```bash
+prek run
+```
