@@ -1,0 +1,31 @@
+name: Python Unit Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  python-unit-tests:
+    # Skip CI on draft pull requests
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: Install uv
+      run: |
+        curl -Ls https://astral.sh/uv/install.sh | sh
+
+    - name: Install dependencies including dev dependencies
+      run: |
+        uv sync --all-groups
+
+    - name: Run tests
+      run: |
+        uv run python -m pytest tests/ -v
