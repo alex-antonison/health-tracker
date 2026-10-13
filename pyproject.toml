@@ -1,0 +1,31 @@
+# This project uses uv for Python dependency management
+# Run 'uv sync' to install dependencies
+# Run 'uv sync --all-groups' to install development dependencies
+# Run 'uv run health-tracker' to execute the application
+
+[project]
+name = "health-tracker"
+version = "0.1.0"
+description = "Health tracker for processing health data from Google Sheets"
+readme = "README.md"
+authors = [
+    { name = "Alexander Antonison", email = "adantonison@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "google-auth>=2.62.0",
+    "gspread>=6.2.1",
+    "pandas>=3.0.6",
+]
+
+[project.scripts]
+health-tracker = "health_tracker:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"

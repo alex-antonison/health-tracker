@@ -1,0 +1,12 @@
+# Environment variables template for health-tracker
+# Copy this file to .envrc and modify the values for your setup
+
+# Activate the virtual environment
+source .venv/bin/activate
+
+# Google Cloud credentials location
+# Download your service account JSON file and point to its location
+export GOOGLE_CREDENTIAL_LOCATION=/path/to/your/google/credentials.json
+
+# Google Sheet name (default is "Symptom Tracker" if not set)
+export SYMPTOM_GOOGLE_SHEET=Your_Symptom_Tracker_Name
