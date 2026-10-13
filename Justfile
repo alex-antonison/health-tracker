@@ -12,6 +12,12 @@ install-dev:
     echo "Installing all dependencies with uv..."
     uv sync --all-groups
 
+# Install prek for automatic code quality checks
+setup-prek:
+    echo "Setting up prek hooks..."
+    uv tool install prek
+    prek install
+
 # Run the health tracker script using uv
 run:
     echo "Running health tracker script..."

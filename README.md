@@ -40,7 +40,18 @@ This project uses **uv** for Python dependency management. Please use uv command
    uv sync
    ```
 
-4. Set up environment variables:
+4. Install prek for automatic code quality checks:
+   ```
+   just setup-prek
+   ```
+
+   Or manually with:
+   ```
+   uv tool install prek
+   prek install
+   ```
+
+5. Set up environment variables:
    - Copy `.envrc.template` to `.envrc` and modify the variables:
      ```
      cp .envrc.template .envrc
@@ -142,8 +153,13 @@ Prek hooks are configured to run Ruff formatting and linting on every commit:
 
 To install the prek hooks:
 ```bash
+just setup-prek
+```
+
+Or manually with:
+```bash
 uv tool install prek
-prek init
+prek install
 ```
 
 Once installed, the hooks will run automatically on every commit. If you want to run them manually on all files:
