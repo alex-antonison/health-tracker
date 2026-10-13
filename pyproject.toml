@@ -24,6 +24,7 @@ health-tracker = "health_tracker:main"
 [dependency-groups]
 dev = [
     "pytest>=8.0.0",
+    "ruff>=0.17.0",
 ]
 
 [build-system]
