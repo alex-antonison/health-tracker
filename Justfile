@@ -11,10 +11,6 @@ install:
 install-dev:
     echo "Installing all dependencies with uv..."
     uv sync --all-groups
-
-# Install prek for automatic code quality checks
-setup-prek:
-    echo "Setting up prek hooks..."
     uv tool install prek
     prek install
 
@@ -42,8 +38,6 @@ test-sample:
 # Setup development environment
 setup: install-dev
     echo "Setting up prek hooks..."
-    uv tool install prek
-    prek install
     echo "Development environment setup complete!"
     echo "Copy .envrc.template to .envrc and set the required environment variables."
     echo "This project uses uv for Python dependency management."
