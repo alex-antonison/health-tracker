@@ -26,32 +26,21 @@ This project uses **uv** for Python dependency management. Please use uv command
 - `uv run python -m pytest tests/` - Run tests
 - `uv add package-name` - Add new dependencies
 
+For a complete setup including prek hooks, use:
+- `just setup` - Install all dependencies and set up prek hooks
+
 ## Setup
 
 1. Ensure you have Python 3.13+ installed
 2. Install [just](https://github.com/casey/just) command runner
-3. Install dependencies using uv:
+3. Run complete setup:
    ```
-   just install
-   ```
-
-   Or manually with:
-   ```
-   uv sync
+   just setup
    ```
 
-4. Install prek for automatic code quality checks:
-   ```
-   just setup-prek
-   ```
+   This will install all dependencies and set up prek hooks for automatic code quality checks.
 
-   Or manually with:
-   ```
-   uv tool install prek
-   prek install
-   ```
-
-5. Set up environment variables:
+4. Set up environment variables:
    - Copy `.envrc.template` to `.envrc` and modify the variables:
      ```
      cp .envrc.template .envrc
@@ -151,18 +140,9 @@ Prek hooks are configured to run Ruff formatting and linting on every commit:
 - `ruff format` - Formats Python code according to PEP 8 standards
 - `ruff check` - Checks for linting issues and automatically fixes them when possible
 
-To install the prek hooks:
-```bash
-just setup-prek
-```
+The prek hooks are automatically installed when you run `just setup`. Once installed, the hooks will run automatically on every commit.
 
-Or manually with:
-```bash
-uv tool install prek
-prek install
-```
-
-Once installed, the hooks will run automatically on every commit. If you want to run them manually on all files:
+If you want to run them manually on all files:
 ```bash
 prek run
 ```

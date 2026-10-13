@@ -41,6 +41,9 @@ test-sample:
 
 # Setup development environment
 setup: install-dev
+    echo "Setting up prek hooks..."
+    uv tool install prek
+    prek install
     echo "Development environment setup complete!"
     echo "Copy .envrc.template to .envrc and set the required environment variables."
     echo "This project uses uv for Python dependency management."
