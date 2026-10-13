@@ -11,6 +11,8 @@ install:
 install-dev:
     echo "Installing all dependencies with uv..."
     uv sync --all-groups
+    uv tool install prek
+    prek install
 
 # Run the health tracker script using uv
 run:
@@ -35,6 +37,7 @@ test-sample:
 
 # Setup development environment
 setup: install-dev
+    echo "Setting up prek hooks..."
     echo "Development environment setup complete!"
     echo "Copy .envrc.template to .envrc and set the required environment variables."
     echo "This project uses uv for Python dependency management."
@@ -49,7 +52,7 @@ clean:
 status:
     echo "Checking project status..."
     just check-env
-    
+
 # Check environment variables
 check-env:
     echo "Checking environment variables..."
